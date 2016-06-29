@@ -9,6 +9,12 @@ using System.Threading.Tasks;
 
 namespace TopshelfTesting
 {
+    /// <summary>
+    /// 
+    /// Added this installer Class thats handles the Installe via WI installer.
+    /// 
+    /// </summary>
+
     [RunInstaller(true)]
     public class ProjectInstaller : Installer
     {
@@ -28,7 +34,12 @@ namespace TopshelfTesting
 
             this._serviceProcessInstaller.Account = ServiceAccount.User;
 
-            this._serviceInstaller.DisplayName = "TopshelfInstaller";
+            ///
+            ///the Display name and Service name should be the same names
+            ///as the display and service name of the service in topshelf.
+            ///
+
+            this._serviceInstaller.DisplayName = "TopshelfInstaller"; 
             this._serviceInstaller.ServiceName = "TopshelfInstaller";
 
             this.Installers.AddRange(new Installer[] { this._serviceProcessInstaller, this._serviceInstaller });

@@ -12,6 +12,8 @@ namespace TopshelfTesting
     {
         static void Main(string[] args)
         {
+
+            //This is the normal way of runnning topshelf.
             HostFactory.Run(
             x =>
             {
